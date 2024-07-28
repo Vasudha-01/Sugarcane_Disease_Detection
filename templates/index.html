@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sugarcane Leaf Disease Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Sugarcane Leaf Disease Detection</h1>
+    </header>
+    <main>
+        <div class="upload-section">
+            <h2>Upload Leaf Image</h2>
+            <form action="{{ url_for('upload') }}" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" required>
+                <button type="submit">Upload</button>
+            </form>
+            
+        </div>
+    </main>
+    <footer>
+        <p>&copy; Sugarcane Leaf Disease Detection</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Sugarcane Leaf Disease Detection</h1>
+    </header>
+    <main>
+        <div class="result-section">
+            <h2>Results</h2>
+            <!--p>Image has been successfully uploaded and processed. Here are the results...</p>
+             Display the uploaded image -->
+            <img src="{{ url_for('static', filename='uploads/' + filename) }}" alt="Uploaded Image" style="max-width: 100%; height: auto;">
+            <!-- Display result or any additional information here -->
+            <p style="color: red; font-weight: bold; font-size: larger;">Disease Detected: {{ result }}</p>
+ <!-- Example of how to show the prediction -->
+            <a href="{{ url_for('index') }}" class="btn">Upload Another Image</a>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Sugarcane Leaf Disease Detection</p>
+    </footer>
+</body>
+</html>
