@@ -83,3 +83,8 @@ footer {
     bottom: 0;
     width: 100%;
 }
+.remedy {
+    font-weight: bold;
+    font-size: 20px;
+    color: #d9534f; /* Optional: You can set a specific color for remedy text */
+}

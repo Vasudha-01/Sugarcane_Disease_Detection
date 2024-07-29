@@ -13,12 +13,20 @@
     <main>
         <div class="result-section">
             <h2>Results</h2>
-            <!--p>Image has been successfully uploaded and processed. Here are the results...</p>
-             Display the uploaded image -->
+            <!-- Display the uploaded image -->
             <img src="{{ url_for('static', filename='uploads/' + filename) }}" alt="Uploaded Image" style="max-width: 100%; height: auto;">
             <!-- Display result or any additional information here -->
-            <p style="color: red; font-weight: bold; font-size: larger;">Disease Detected: {{ result }}</p>
- <!-- Example of how to show the prediction -->
+            <p style="color: red; font-weight: bold; font-size: larger;">Prediction: {{ result }}</p>
+            <!-- Display remedy based on the prediction result -->
+            {% if result == 'Red Rot' %}
+                <p class="remedy">Remedy: Apply fungicides such as carbendazim or copper oxychloride to infected areas to control the spread of the disease.</p>
+            {% elif result == 'Red Rust' %}
+                <p class="remedy">Remedy: Spray the affected plants with fungicides like mancozeb or copper-based compounds to effectively manage and control the disease.</p>
+            {% elif result == 'Healthy' %}
+                <p class="remedy">No disease detected. The leaf appears to be healthy.</p>
+            {% else %}
+                <p class="remedy">No specific remedy available.</p>
+            {% endif %}
             <a href="{{ url_for('index') }}" class="btn">Upload Another Image</a>
         </div>
     </main>
